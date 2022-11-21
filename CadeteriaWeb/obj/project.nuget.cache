@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "HAw12oJSW60kBekWkc/EbwaJz4P59a5OmAhrrvMstLrR1RjCMQmbWnCLnT0RpA2heSCeV7rSBiHnlWZOBXzorg==",
+  "dgSpecHash": "BYDg2r5hcux5pD5bQSAxy5yQm0lsqnf4Cx4YJjdjGTNlQW64n4i0dR3Jr+f94bwVks2WYm2g8jSeJ/xvs3zaIA==",
   "success": true,
-  "projectFilePath": "C:\\taller\\tl2-tp4-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mimii\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\automapper.extensions.expressionmapping\\6.0.1\\automapper.extensions.expressionmapping.6.0.1.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\nlog\\5.0.4\\nlog.5.0.4.nupkg.sha512",
+    "C:\\Users\\mimii\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

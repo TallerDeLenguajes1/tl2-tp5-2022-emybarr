@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\taller\\tl2-tp4-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {}
+    "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {}
   },
   "projects": {
-    "C:\\taller\\tl2-tp4-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {
+    "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\taller\\tl2-tp4-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
+        "projectUniqueName": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
         "projectName": "CadeteriaWeb",
-        "projectPath": "C:\\taller\\tl2-tp4-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
+        "projectPath": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
         "packagesPath": "C:\\Users\\mimii\\.nuget\\packages\\",
-        "outputPath": "C:\\taller\\tl2-tp4-2022-emybarr\\CadeteriaWeb\\obj\\",
+        "outputPath": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mimii\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,24 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "AutoMapper.Extensions.ExpressionMapping": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

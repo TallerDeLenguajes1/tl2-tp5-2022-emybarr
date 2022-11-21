@@ -1,0 +1,28 @@
+
+@model  CadeteriaWeb.Models.ViewModels.CadeteViewModel
+
+
+@{
+    ViewData["Title"] = "Modificar Cadete";
+}
+
+
+<div class="text-center">
+    
+    <h1 class="display-4">MODIFICAR DATOS DEL CADETE</h1>
+    <form asp-controller="Cadete" asp-action="ModificarCadete" method="post">
+        <input type ="hidden" name="Id" value="@Model.Id" />
+        <label for="Nombre" class="form-label"> Nombre </label>
+        <input type="text"  class="form-control" id="Nombre" name="Nombre" required placeholder="Juan Perez" value="@Model.Nombre">
+
+        <label for="Direccion" class="form-label"> Direccion </label>
+        <input type="text"  class="form-control" id="Direccion" name="Direccion" required placeholder="San Martin 125" value ="@Model.Direccion">
+
+        <label for="Telefono" class="form-label"> Telefono </label>
+        <input type="text"  class="form-control" id="Telefono" name="Telefono" required placeholder="381-15"  value="@Model.Telefono">
+
+        <button type="submit" class="btn brn-primary">Guardar</button>
+
+    </form>
+   
+</div>

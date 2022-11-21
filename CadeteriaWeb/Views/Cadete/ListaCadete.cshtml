@@ -1,9 +1,5 @@
-@{
-    ViewData["Title"] = "Lista de Cadetes";
-}
+@model List<CadeteriaWeb.Models.ViewModels.CadeteViewModel>
 
-
-@model List<Cadete>
 
     <h1>Lista de Cadetes</h1>
     
@@ -14,19 +10,34 @@
                 <th>NOMBRE</th>
                 <th>DIRECCION</th>
                 <th>TELEFONO</th>
+                <th>MODIFICAR</th>
+                <th>ELIMINAR</th>
             </tr>
         </thead>
 
         <tbody>
+
+        
             @foreach (var item in Model)
-            {
+            { 
                 <tr>
+              
                     <th>@item.Id</th>
                     <td>@item.Nombre</td>
                     <td>@item.Direccion</td>
                     <td>@item.Telefono</td>
+                    
+                    
+                     <td><a asp-controller="Cadete" asp-action="ModificarCadete" asp-route-id="@item.Id">MODIFICAR</a></td>
+               
+                     <td><a asp-controller="Cadete" asp-action="Eliminar" asp-route-id="@item.Id">Borrar</a></td>
+
                 </tr>
             }
         </tbody>
-
+      
     </table>
+    
+
+
+    

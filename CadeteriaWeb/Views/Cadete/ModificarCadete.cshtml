@@ -11,7 +11,7 @@
     
     <h1 class="display-4">MODIFICAR DATOS DEL CADETE</h1>
     <form asp-controller="Cadete" asp-action="ModificarCadete" method="post">
-        <input type ="hidden" name="Id" value="@Model.Id" />
+        <input type ="hidden" name="Id" value="@Model.IdCadete" />
         <label for="Nombre" class="form-label"> Nombre </label>
         <input type="text"  class="form-control" id="Nombre" name="Nombre" required placeholder="Juan Perez" value="@Model.Nombre">
 

@@ -22,15 +22,15 @@
             { 
                 <tr>
               
-                    <th>@item.Id</th>
+                    <th>@item.IdCadete</th>
                     <td>@item.Nombre</td>
                     <td>@item.Direccion</td>
                     <td>@item.Telefono</td>
                     
                     
-                     <td><a asp-controller="Cadete" asp-action="ModificarCadete" asp-route-id="@item.Id">MODIFICAR</a></td>
+                     <td><a asp-controller="Cadete" asp-action="ModificarCadete" asp-route-id="@item.IdCadete">MODIFICAR</a></td>
                
-                     <td><a asp-controller="Cadete" asp-action="Eliminar" asp-route-id="@item.Id">Borrar</a></td>
+                     <td><a asp-controller="Cadete" asp-action="Eliminar" asp-route-id="@item.IdCadete">Borrar</a></td>
 
                 </tr>
             }

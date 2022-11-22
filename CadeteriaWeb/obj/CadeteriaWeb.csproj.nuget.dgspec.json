@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {}
+    "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj": {}
   },
   "projects": {
-    "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {
+    "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
+        "projectUniqueName": "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj",
         "projectName": "CadeteriaWeb",
-        "projectPath": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
+        "projectPath": "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj",
         "packagesPath": "C:\\Users\\mimii\\.nuget\\packages\\",
-        "outputPath": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\obj\\",
+        "outputPath": "C:\\taller\\tp7\\CadeteriaWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mimii\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -42,17 +42,37 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
-            "AutoMapper.Extensions.ExpressionMapping": {
-              "target": "Package",
-              "version": "[6.0.1, )"
-            },
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.0-preview2.22314.2, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "NLog": {
               "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[5.0.5, )"
+            },
+            "SQLite": {
+              "target": "Package",
+              "version": "[3.13.0, )"
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.116, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

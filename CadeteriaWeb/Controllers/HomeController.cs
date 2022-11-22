@@ -1,15 +1,11 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CadeteriaWeb.Models;
-using System.IO;
-using AutoMapper;
-using CadeteriaWeb.Models.ViewModels;
 
 namespace CadeteriaWeb.Controllers;
 
 public class HomeController : Controller
 {
-
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
@@ -17,12 +13,11 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-     public ActionResult Index()
-        {
-            return View();
-        }
+    public IActionResult Index()
+    {
+        return View();
+    }
 
-      
     public IActionResult Privacy()
     {
         return View();

@@ -7,7 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CadeteriaWeb.Models;
 using AutoMapper;
+using CadeteriaWeb.Models.Repositorios;
+using Microsoft.Data.Sqlite;
 using CadeteriaWeb.Models.ViewModels;
+using System.Data.SQLite;
+
 
 
 
@@ -16,6 +20,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddTransient<IRepositorioCadete,RepositorioCadete>();
+
 
 var app = builder.Build();
 

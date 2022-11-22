@@ -1,0 +1,213 @@
+{
+    "type": "database",
+    "name": "PedidosDB",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "Cadete",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Cadete (idcadete INTEGER PRIMARY KEY NOT NULL, nombrecadete CHAR (100) NOT NULL, direccioncadete CHAR (200), telefonocadete CHAR (25), altacadete BOOLEAN)",
+            "columns": [
+                {
+                    "name": "idcadete",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "nombrecadete",
+                    "type": "CHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "direccioncadete",
+                    "type": "CHAR"
+                },
+                {
+                    "name": "telefonocadete",
+                    "type": "CHAR"
+                },
+                {
+                    "name": "altacadete",
+                    "type": "BOOLEAN"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Juan",
+                    "mendoza 123",
+                    "123546",
+                    null
+                ],
+                [
+                    2,
+                    "Pedro",
+                    "junin 127",
+                    "1235654",
+                    null
+                ],
+                [
+                    3,
+                    "Mario",
+                    "San juan 145",
+                    "5689656",
+                    null
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Cadeteria",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Cadeteria (idcadeteria INTEGER PRIMARY KEY NOT NULL, nombrecadeteria CHAR (100))",
+            "columns": [
+                {
+                    "name": "idcadeteria",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "nombrecadeteria",
+                    "type": "CHAR"
+                }
+            ],
+            "rows": [
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Cliente",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Cliente (idcliente INTEGER PRIMARY KEY NOT NULL, nombrecliente CHAR (100) NOT NULL, direccioncliente CHAR (200), telefonocliente CHAR (25))",
+            "columns": [
+                {
+                    "name": "idcliente",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "nombrecliente",
+                    "type": "CHAR",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "direccioncliente",
+                    "type": "CHAR"
+                },
+                {
+                    "name": "telefonocliente",
+                    "type": "CHAR"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "emilia",
+                    "mendoza 4702",
+                    "326365"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "Pedido",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE Pedido (idpedido INTEGER PRIMARY KEY NOT NULL, observacionesP CHAR (200), idcadete INTEGER REFERENCES Cadete (idcadete) ON DELETE CASCADE ON UPDATE CASCADE, idcliente INTEGER NOT NULL REFERENCES Cliente (idcliente) ON DELETE CASCADE ON UPDATE CASCADE, estadopedido CHAR (20), altapedido BOOLEAN)",
+            "columns": [
+                {
+                    "name": "idpedido",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "PRIMARY KEY",
+                            "definition": "PRIMARY KEY "
+                        },
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "observacionesP",
+                    "type": "CHAR"
+                },
+                {
+                    "name": "idcadete",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Cadete (idcadete) ON DELETE CASCADE ON UPDATE CASCADE"
+                        }
+                    ]
+                },
+                {
+                    "name": "idcliente",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL "
+                        },
+                        {
+                            "type": "FOREIGN KEY",
+                            "definition": "REFERENCES Cliente (idcliente) ON DELETE CASCADE ON UPDATE CASCADE"
+                        }
+                    ]
+                },
+                {
+                    "name": "estadopedido",
+                    "type": "CHAR"
+                },
+                {
+                    "name": "altapedido",
+                    "type": "BOOLEAN"
+                }
+            ],
+            "rows": [
+            ]
+        }
+    ]
+}

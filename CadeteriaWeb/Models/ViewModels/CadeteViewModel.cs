@@ -10,8 +10,7 @@ namespace CadeteriaWeb.Models.ViewModels
 {
     public class CadeteViewModel
     {
-
-            public int Id{get;set;}
+         public int IdCadete{get;set;}
 
             [Required(ErrorMessage = "INGRESE EL NOMBRE.")]
             [StringLength(100)]
@@ -25,20 +24,33 @@ namespace CadeteriaWeb.Models.ViewModels
             [StringLength(15)]
             public string Telefono{get;set;}
 
+            public bool Alta {get;set;}
+
             public CadeteViewModel(){}
 
-
-            public CadeteViewModel(int id, string n, string d, string te){
-                Id= id;
-                Nombre = n;
-                Direccion = d;
-                Telefono = te;
+            public CadeteViewModel(int i , string n , string d , string tel, bool alta)
+            {
+                  IdCadete=i;
+                  Nombre= n;
+                  Direccion= d;
+                  Telefono= tel;
+                  Alta = alta;
             }
 
+
+            public class CadeteListaViewModel
+            {
+                public int Idcadete {get;set;}
+
+                public string Nombre{get;set;}
+                public string Direccion{get;set;}
+                public string Telefono {get;set;}
+
+                 public bool Alta {get;set;}
+
+            }
+
+
+
     }
-
-      
-      }
-
-
-
+}

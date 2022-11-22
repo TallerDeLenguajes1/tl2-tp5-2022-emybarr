@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace CadeteriaWeb.Models.Entidades
 {
 
-    public enum EstadoPedido{Vacio,En_preparacion,En_camino,Entregado,Cancelado};
+    public enum EstadoPedido {Vacio,En_prepacion,En_camino,Entregado,Cancelado};
     public class Pedido
     {
         private int id;
@@ -14,8 +9,7 @@ namespace CadeteriaWeb.Models.Entidades
         private Cliente cliente;
         private Cadete cadete; 
         private bool alta;
-
-        private EstadoPedido estado;
+        private EstadoPedido estado; 
 
         public int Id { get => id; set => id = value; }
         public string Observacion { get => observacion; set => observacion = value; }
@@ -26,14 +20,16 @@ namespace CadeteriaWeb.Models.Entidades
 
         public Pedido(){}
 
-        public Pedido(int i, string obs, Cliente cl ,  EstadoPedido e, Cadete ca, bool alt){
-            Id=i;
+        public Pedido(int i, string obs, Cliente cl , EstadoPedido ep, Cadete ca, bool alt)
+        {
+            Id= i;
             Observacion = obs;
-            Cliente=cl;
-            Estado=e;
+            Cliente = cl;
+            Estado = ep;
             Cadete = ca;
             Alta = alt;
 
+            
 
         }
     }

@@ -1,0 +1,55 @@
+@model CadeteriaWeb.Models.ViewModels.PedidoListaViewModel
+
+<body>
+<header>
+    <main>
+        <h2>Cargar de Pedidos</h2>
+        <form asp-controller="Pedido" asp-action="CargarPedido" method="post">
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label" for="pedidoObs">Observación: </label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" id="pedidoObs" name="pedidoObs" placeholder="Escriba una observación">
+                </div>
+            </div>  
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label" for="clienteID">Cliente:</label>
+                <div class="col-sm-6">
+                    <select class="form-select form-select-sm" name="clienteID" id="clienteID">
+                        @foreach (var cliente in Model.Clientes)
+                        {
+                            <option value="@cliente.IdCliente">@cliente.Nombre</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label" for="cadeteID">Cadete:</label>
+                <div class="col-sm-6">
+                    <select class="form-select form-select-sm" name="cadeteID" id="cadeteID">
+                        @foreach (var cadete in Model.Cadetes)
+                        {
+                            <option value="@cadete.IdCadete">@cadete.Nombre</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label" for="pedidoEstado">Estado:</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="text" id="pedidoEstado" name="pedidoEstado">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="offset-sm-3 col-sm-3 d-grid">
+                    <input class="btn btn-primary" type="submit" value="Crear">
+                </div>
+           
+        </form>
+    </main>
+</header>
+</body>

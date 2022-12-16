@@ -13,6 +13,10 @@ namespace CadeteriaWeb
         public PerfilMapper()
     {
         CreateMap<Cadete,CadeteViewModel>().ReverseMap();
+        CreateMap<Cadete, ModificaCadeteViewModel>().ReverseMap();
+        CreateMap<Cliente, ClienteViewModel>().ReverseMap();
+        CreateMap<Cliente, ModificarClienteViewModel>().ReverseMap();
+        CreateMap<Pedido, PedidoViewModel>().ReverseMap();
       
 
      

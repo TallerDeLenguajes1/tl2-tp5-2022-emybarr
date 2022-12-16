@@ -1,0 +1,40 @@
+@model List<CadeteriaWeb.Models.ViewModels.PedidoViewModel>
+
+
+    <h1>Lista Pedidos</h1>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>OBSERVACION</th>
+                <th>CLIENTE</th>
+                <th>CADETE</th>
+                <th>ESTADO</th>
+                <th>ELIMINAR</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            { 
+                <tr>
+              
+                     <td>@item.Id</td>
+                     <td>@item.Observacion</td>
+                     <td>@item.Cliented</td>
+                     <td>@item.Cadeted</td>
+                     <td>@item.Estado</td>
+               
+                     <td><a asp-controller="Pedido" asp-action="Eliminar" asp-route-id="@item.Id">Borrar</a></td>
+
+                </tr>
+            }
+        </tbody>
+      
+    </table>
+    
+
+
+    

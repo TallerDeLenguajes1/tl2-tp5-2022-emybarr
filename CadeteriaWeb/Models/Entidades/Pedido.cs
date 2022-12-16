@@ -1,36 +1,41 @@
 namespace CadeteriaWeb.Models.Entidades
 {
+     public enum Estado {Vacio, Procesando,En_Camino,Entregado,Cancelado};
 
-    public enum EstadoPedido {Vacio,En_prepacion,En_camino,Entregado,Cancelado};
     public class Pedido
     {
         private int id;
         private string observacion;
-        private Cliente cliente;
-        private Cadete cadete; 
+        private int cliented;
+        private int cadeted;
+        private Estado state;
         private bool alta;
-        private EstadoPedido estado; 
+
+        
+
+
 
         public int Id { get => id; set => id = value; }
         public string Observacion { get => observacion; set => observacion = value; }
-        public Cliente Cliente { get => cliente; set => cliente = value; }
-        public Cadete Cadete { get => cadete; set => cadete = value; }
         public bool Alta { get => alta; set => alta = value; }
-        public EstadoPedido Estado { get => estado; set => estado = value; }
 
-        public Pedido(){}
+        public int Cliented { get => cliented; set => cliented = value; }
+        public int Cadeted { get => cadeted; set => cadeted = value; }
+        public Estado State { get => state; set => state = value; }
 
-        public Pedido(int i, string obs, Cliente cl , EstadoPedido ep, Cadete ca, bool alt)
+        public Pedido() {} 
+
+
+        public Pedido(int id, string obs, int cl, int ca, Estado e)
         {
-            Id= i;
+            Id =id;
             Observacion = obs;
-            Cliente = cl;
-            Estado = ep;
-            Cadete = ca;
-            Alta = alt;
-
-            
-
+            Cliented = cl;
+            Cadeted = ca;
+            State = e;
         }
+
+        
+        
     }
 }

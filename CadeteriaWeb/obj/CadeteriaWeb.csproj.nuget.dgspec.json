@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj": {}
+    "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {}
   },
   "projects": {
-    "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj": {
+    "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj",
+        "projectUniqueName": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
         "projectName": "CadeteriaWeb",
-        "projectPath": "C:\\taller\\tp7\\CadeteriaWeb\\CadeteriaWeb.csproj",
+        "projectPath": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\CadeteriaWeb.csproj",
         "packagesPath": "C:\\Users\\mimii\\.nuget\\packages\\",
-        "outputPath": "C:\\taller\\tp7\\CadeteriaWeb\\obj\\",
+        "outputPath": "C:\\taller\\tl2-tp5-2022-emybarr\\CadeteriaWeb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mimii\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -46,6 +46,14 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.0-preview2.22314.2, )"
@@ -65,6 +73,22 @@
             "SQLite": {
               "target": "Package",
               "version": "[3.13.0, )"
+            },
+            "SQLitePCLRaw.bundle_e_sqlite3": {
+              "target": "Package",
+              "version": "[2.1.3-pre20221111222311, )"
+            },
+            "SQLitePCLRaw.core": {
+              "target": "Package",
+              "version": "[2.1.3-pre20221111222311, )"
+            },
+            "SQLitePCLRaw.lib.e_sqlite3": {
+              "target": "Package",
+              "version": "[2.1.3-pre20221111222311, )"
+            },
+            "SQLitePCLRaw.provider.dynamic_cdecl": {
+              "target": "Package",
+              "version": "[2.1.3-pre20221111222311, )"
             },
             "System.Data.SQLite.Core": {
               "target": "Package",

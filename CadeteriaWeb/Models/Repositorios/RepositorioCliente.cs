@@ -2,58 +2,63 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CadeteriaWeb.Models.Repositorios;
-using System.Data.SQLite;
 using CadeteriaWeb.Models.Entidades;
 using Microsoft.Data.Sqlite;
+using System.Data.SQLite;
 
 
 
 namespace CadeteriaWeb.Models.Repositorios
 {
-    public class RepositorioCadete : IRepositorioCadete
+     
+    public class RepositorioCliente : IRepositorioCliente
     {
-        private  string connectionString;
+         private string connectionString;
 
-        public RepositorioCadete()
+         public RepositorioCliente()
         {
             connectionString = "Data Source=DB/Cadeteria.db";
-
         }
 
-        public List<Cadete> getAllCadetes()
+         public  List<Cliente> getAllClientes()
         {
-            const string consulta = "SELECT * FROM Cadetes;";
-            List<Cadete>lista = new List<Cadete>();
+            const string consulta = "SELECT * FROM Clientes;";
+            List<Cliente>lista = new List<Cliente>();
             using var conexion = new SQLiteConnection(connectionString);
             var peticion = new SQLiteCommand(consulta,conexion);
             conexion.Open();
 
+            try
+            {
             using var reader = peticion.ExecuteReader();
             while(reader.Read())
             {
-                var cadete = new Cadete 
+                var cliente = new Cliente
                 {
-                    IdCadete = reader.GetInt32(0),
+                    IdCliente = reader.GetInt32(0),
                     Nombre = reader.GetString(1),
-                    Telefono = reader.GetString(2),
-                    Direccion = reader.GetString(3),
-                    Alta = reader.GetBoolean(4)
-
+                    Direccion = reader.GetString(2),
+                    Telefono = reader.GetString(3),
+                    Alta  = reader.GetBoolean(4)
+                  
                 };
-                lista.Add(cadete);
+                lista.Add(cliente);
             }
+
+            } catch(Exception)
+            {
+                Console.WriteLine("error");
+            }
+
             conexion.Close();
             return lista;
+            }
 
-            } 
 
-            
-      
-
-            public void EliminarCadete(int id)
+            public void EliminarCliente(int id)
             {
-                const string consulta = "DELETE FROM Cadetes WHERE cadeteID = @id ;";
+                  
+                const string consulta = "DELETE FROM Clientes WHERE clienteID = @id ;";
                 try 
                 {
                     using var conexion = new SQLiteConnection(connectionString);
@@ -71,18 +76,17 @@ namespace CadeteriaWeb.Models.Repositorios
             }
 
 
-           public void InsertarCadete(Cadete nuevo)
+            public void InsertarCliente(Cliente nuevo)
             {
-                const string consulta = "INSERT INTO Cadetes(cadeteNombre,cadeteDireccion,cadeteTelefono,cadeteAlta) VALUES (@nombre,@direccion,@telefono,1);";
+                const string consulta = "INSERT INTO Clientes(clienteNombre,clienteDireccion,clienteTelefono,clienteAlta) VALUES (@nombre,@direccion,@telefono,1);";
                 try 
                 {
                     using var conexion = new SQLiteConnection(connectionString);
                     conexion.Open();
                     var peticion = new SQLiteCommand(consulta,conexion);
                     peticion.Parameters.AddWithValue("@nombre",nuevo.Nombre);
-                    peticion.Parameters.AddWithValue("@telefono", nuevo.Telefono);
-        
                     peticion.Parameters.AddWithValue("@direccion",nuevo.Direccion);
+                    peticion.Parameters.AddWithValue("@telefono", nuevo.Telefono);
                    
                     peticion.ExecuteReader();
                     conexion.Close();
@@ -94,9 +98,37 @@ namespace CadeteriaWeb.Models.Repositorios
                 }
             }
 
-        public  Cadete BuscarId(int id){
             
-        const string consulta = "SELECT * FROM  Cadetes WHERE cadeteID = @id; ";
+
+             public void ModificarCliente(Cliente edit) 
+             {
+                const string consulta = "UPDATE Clientes SET clienteNombre = @nombre, clienteDireccion = @direccion , clienteTelefono = @telefono  WHERE clienteId= @id;";
+                try 
+                {
+                    using var conexion = new SQLiteConnection(connectionString);
+                    conexion.Open();
+                    var peticion = new SQLiteCommand(consulta,conexion);
+                    peticion.Parameters.AddWithValue("@id",edit.IdCliente);
+                    peticion.Parameters.AddWithValue("@nombre",edit.Nombre);
+                    peticion.Parameters.AddWithValue("@direccion",edit.Direccion);
+                    peticion.Parameters.AddWithValue("@telefono", edit.Telefono);
+                   
+    
+                    peticion.ExecuteNonQuery();
+                    conexion.Close();
+                    conexion.Dispose();
+
+                }catch(Exception) 
+                {
+                      Console.WriteLine("error");
+
+                }
+            }
+
+
+        public  Cliente BuscarId(int id){
+            
+        const string consulta = "SELECT * FROM  Clientes WHERE clienteAlta AND clienteId = @id; ";
 
         try
         {
@@ -106,16 +138,16 @@ namespace CadeteriaWeb.Models.Repositorios
             peticion.Parameters.AddWithValue("@id", id);
             
  
-            var salida = new Cadete();
+            var salida = new Cliente();
             using var reader = peticion.ExecuteReader();
             while (reader.Read())
-                salida = new Cadete
+                salida = new Cliente
                 {
-                    IdCadete = reader.GetInt32(0),
+                    IdCliente = reader.GetInt32(0),
                      Nombre = reader.GetString(1),
                      Telefono = reader.GetString(2),
                       Direccion = reader.GetString(3),
-                    Alta = reader.GetBoolean(4)
+                      Alta  = reader.GetBoolean(4)
                 };
             conexion.Close();
             return salida;
@@ -128,41 +160,8 @@ namespace CadeteriaWeb.Models.Repositorios
         return null;
     }
 
-    public void ModificarCadete(Cadete edit){
-
-        const string consulta =  "UPDATE Cadetes SET cadeteNombre = @nombre,cadeteDireccion = @direccion ,cadeteTelefono = @telefono  WHERE cadeteID = @id ;";
-
-             try
-        {
-                    using var conexion = new SQLiteConnection(connectionString);
-                    conexion.Open();
-                    var peticion = new SQLiteCommand(consulta,conexion);
-                   
-            
-                    peticion.Parameters.AddWithValue("@id",edit.IdCadete);
-                    peticion.Parameters.AddWithValue("@nombre",edit.Nombre);
-                    peticion.Parameters.AddWithValue("@direccion",edit.Direccion);
-                    peticion.Parameters.AddWithValue("@telefono", edit.Telefono);
-        
-                   
-                    peticion.ExecuteNonQuery();
-                    conexion.Close();
-                    conexion.Dispose();
-                    
-                    
-            
-                
-            
-            
-        }catch (Exception )
-        {
-             Console.WriteLine("no se guarda");
-        }
 
 
-
-    }
-
+             }
 
 }
- }

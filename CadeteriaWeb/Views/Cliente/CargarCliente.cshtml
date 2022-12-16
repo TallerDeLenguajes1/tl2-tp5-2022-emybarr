@@ -1,14 +1,14 @@
 @{
-    ViewData["Title"] = "Cargar cadete";
+    ViewData["Title"] = "Cargar Cliente";
 }
 
-@model CadeteriaWeb.Models.ViewModels.CargarCadeteViewModel 
+@model CadeteriaWeb.Models.ViewModels.CargarClienteViewModel 
 
 <body>
 <header>
     <main>
-        <h2>INGRESAR DATOS DEL CADETE</h2>
-         <form asp-controller="Cadete" asp-action="CargarCadete" method="post">
+      <h1 class="display-4">INGRESAR DATOS DEL CLIENTE </h1>
+    <form asp-controller="Cliente" asp-action="CargarCliente" method="post">
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label" for="nombre"> Nombre: </label>

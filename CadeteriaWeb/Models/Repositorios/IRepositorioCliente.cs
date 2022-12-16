@@ -9,16 +9,18 @@ using System.Data.SQLite;
 
 namespace CadeteriaWeb.Models.Repositorios
 {
-    public interface IRepositorioCadete
+    public interface IRepositorioCliente
     {
-    
-    List<Cadete> getAllCadetes();
-    void EliminarCadete(int id);
-    void InsertarCadete(Cadete nuevo);
-     Cadete BuscarId(int id);
-    void ModificarCadete(Cadete edit);
-    
-        
-      
+            
+    List<Cliente> getAllClientes();
+    void EliminarCliente(int id);
+
+    void InsertarCliente(Cliente nuevo);
+
+    void ModificarCliente(Cliente edit);
+    Cliente BuscarId(int id);
+
+       
+
     }
 }

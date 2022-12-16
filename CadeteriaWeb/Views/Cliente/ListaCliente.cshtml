@@ -1,7 +1,7 @@
-@model List<CadeteriaWeb.Models.ViewModels.CadeteViewModel>
+@model List<CadeteriaWeb.Models.ViewModels.ClienteViewModel>
 
 
-    <h1>Lista de Cadetes</h1>
+    <h1>Lista de Clientes</h1>
     
     <table class="table">
         <thead>
@@ -10,7 +10,6 @@
                 <th>NOMBRE</th>
                 <th>DIRECCION</th>
                 <th>TELEFONO</th>
-             
                 <th>MODIFICAR</th>
                 <th>ELIMINAR</th>
             </tr>
@@ -22,15 +21,15 @@
             { 
                 <tr>
               
-                     <td>@item.IdCadete</td>
+                     <td>@item.IdCliente</td>
                      <td>@item.Nombre</td>
                      <td>@item.Direccion</td>
                      <td>@item.Telefono</td>
-               
+                   
                     
-                     <td><a asp-controller="Cadete" asp-action="ModificarCadete" asp-route-id="@item.IdCadete">MODIFICAR</a></td>
+                     <td><a asp-controller="Cliente" asp-action="ModificarCliente" asp-route-id="@item.IdCliente">MODIFICAR</a></td>
                
-                     <td><a asp-controller="Cadete" asp-action="Eliminar" asp-route-id="@item.IdCadete">Borrar</a></td>
+                     <td><a asp-controller="Cliente" asp-action="Eliminar" asp-route-id="@item.IdCliente">Borrar</a></td>
 
                 </tr>
             }

@@ -2,15 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CadeteriaWeb.Models;
+using CadeteriaWeb.Models.Entidades;
 using System.ComponentModel.DataAnnotations;
 
 
 namespace CadeteriaWeb.Models.ViewModels
 {
-    public class CadeteViewModel
+    public class ClienteViewModel
     {
-            public int IdCadete{get;set;}
+        public int IdCliente{get;set;}
 
             [Required(ErrorMessage = "INGRESE EL NOMBRE.")]
             [StringLength(100)]
@@ -26,30 +26,30 @@ namespace CadeteriaWeb.Models.ViewModels
 
             public bool Alta {get;set;}
 
-            public CadeteViewModel(){}
+            public ClienteViewModel(){}
 
-            public CadeteViewModel(int i , string n , string d , string tel, bool alta)
+            public ClienteViewModel(int i , string n , string d , string tel)
             {
-                  IdCadete=i;
+                  IdCliente=i;
                   Nombre= n;
                   Direccion= d;
                   Telefono= tel;
-                  Alta = alta;
+             
             }
     }
 
-            public class CadeteListaViewModel
+
+     public class ClienteListaViewModel
             {
-                public int IdCadete {get;set;}
+                public int IdCliente {get;set;}
 
                 public string Nombre{get;set;}
                 public string Direccion{get;set;}
                 public string Telefono {get;set;}
-                public bool Alta {get;set;}
 
             }
 
-            public class CargarCadeteViewModel 
+            public class CargarClienteViewModel 
             {
             public int IdCadete{get;set;}
 
@@ -67,9 +67,9 @@ namespace CadeteriaWeb.Models.ViewModels
 
             }
 
-            public class ModificaCadeteViewModel
+            public class ModificarClienteViewModel 
             {
-              public int IdCadete{get;set;}
+                 public int IdCliente{get;set;}
 
             [Required(ErrorMessage = "INGRESE EL NOMBRE.")]
             [StringLength(100)]
@@ -83,9 +83,5 @@ namespace CadeteriaWeb.Models.ViewModels
             [StringLength(15)]
             public string Telefono{get;set;}
 
-            public bool Alta {get;set;}
-
             }
-
-
-    }
+}

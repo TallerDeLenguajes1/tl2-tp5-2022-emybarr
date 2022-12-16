@@ -2,46 +2,6 @@
     ViewData["Title"] = "CADETES";
 }
 
-@model List<CadeteriaWeb.Models.ViewModels.CadeteViewModel.CadeteListaViewModel>
-
- <h1>Lista de Cadetes</h1>
-    
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>DIRECCION</th>
-                <th>TELEFONO</th>
-                <th>MODIFICAR</th>
-                <th>ELIMINAR</th>
-            </tr>
-        </thead>
-
-        <tbody>
-
-        
-            @foreach (var item in Model)
-            { 
-                <tr>
-              
-                    <th>@item.Idcadete</th>
-                    <td>@item.Nombre</td>
-                    <td>@item.Direccion</td>
-                    <td>@item.Telefono</td>
-                    <form method = "post">
-                    
-                    <td> <button type="submit" class="btn btn-primary" asp-controller="Cadete" asp-action="ModificarCadete" >MODIFICAR</button></td>
-                     <td> <button type="submit" class="btn btn-danger" asp-controller="Cadete" asp-action="EliminarCadete" > ELIMINAR</button></td>
-                     
-                     </form>
-
-                </tr>
-            }
-        </tbody>
-      
-    </table>
-    
 
 
     
